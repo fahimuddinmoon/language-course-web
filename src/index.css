@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active{
+    
+    border-radius: 15px;
+    background-color: lightgray;
+    color: black;
+}
+.fullBody{
+    background-color: black;
+    color: white;
+}
