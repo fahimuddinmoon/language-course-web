@@ -3,7 +3,7 @@ import { AuthContext } from "../Utility/AuthProvider";
 import UseAxios from "../Utility/UseAxios";
 import { useQuery } from "@tanstack/react-query";
 import { Link, Navigate } from "react-router-dom";
-import UseRole from "../Utility/UseRole";
+
 
 
 const Wishlist = () => {
@@ -35,7 +35,7 @@ const Wishlist = () => {
                         <table className="table">
                             {/* head */}
                             <thead>
-                                <tr>
+                                <tr className="text-blue-500">
                                     <th>Image</th>
                                     <th>Name</th>
                                     <th>Agent Image</th>
@@ -52,9 +52,9 @@ const Wishlist = () => {
                                 {Array.isArray(allData) &&
                                     allData.map(data =>
                                         <tr className="bg-base-200" key={data._id}>
-                                            <img className="w-16 rounded-lg m-1" src={data.Image} alt="" />
+                                            <img className="w-20 h-20 object-cover rounded-lg m-1" src={data.Image} alt="" />
                                             <th className="text-sm font-bold text-gray-600">{data.bayerName}</th>
-                                            <th><img className="w-9 rounded-full" src={data.bayerImg} alt="" /></th>
+                                            <th><img className="w-11 object-cover h-11 rounded-full" src={data.bayerImg} alt="" /></th>
 
                                             <td className="text-sm font-bold text-gray-600">{data.title}</td>
                                             <td className="text-sm font-bold text-gray-600">{data.location}</td>

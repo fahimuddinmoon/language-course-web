@@ -26,6 +26,14 @@ const Advertisement = () => {
         
         const propertyTitle = infos.title
         const propertyLocation = infos.location
+        if(advertise.length < 200 || advertise.length > 250){
+           return Swal.fire({
+                title: "Advertise Length Minimum 35 words & Maximum 45 words!",
+                icon: "error",
+                draggable: true
+            });
+            
+        }
         const data = {advertise,adminEmail,adminIMG,propertyTitle,propertyLocation}
        try{
         await axiosSecure.post('/advertise',data)

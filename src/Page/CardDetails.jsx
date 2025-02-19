@@ -23,6 +23,14 @@ const CardDetails = () => {
     const { Image, bayerEmail, bayerImg, bayerName, location, maxPrice, minPrice, status, title, _id } = info
 
     const handleWish = async () => {
+        if(dataName === 'agent' || dataName === 'admin'){
+            return Swal.fire({
+                title: "You Are Not Customer!",
+                icon: "error",
+                draggable: true
+            });
+            
+        }
         const data = { email: user?.email, Image, bayerEmail, bayerImg, bayerName, location, maxPrice, minPrice, status, title, propertyId: _id }
         try {
             await axiosSecure.post('/wishlist', data)
@@ -44,6 +52,14 @@ const CardDetails = () => {
         const reviewerImg = user?.photoURL
         const propertyTitle = title
         const time = new Date()
+         if(review.length < 200 || review.length > 250){
+                   return Swal.fire({
+                        title: "Advertise Length Minimum 35 words & Maximum 45 words!",
+                        icon: "error",
+                        draggable: true
+                    });
+                    
+                }
         const reviewData = { review, reviewerEmail, reviewerImg, reviewerName, propertyTitle,time }
         
         try {
@@ -63,7 +79,7 @@ const CardDetails = () => {
     }
 
     return (
-        <div className="pt-16  lg:pt-24 ">
+        <div className="mx-2 sm:mx-0 pt-20  lg:pt-24 ">
 
             <div className=" w-full bg-yellow-600 lg:w-9/12 lg:grid lg:grid-cols-3 gap-9 p-5 mx-auto my-7  rounded-lg ">
                 <div className="">
@@ -87,7 +103,7 @@ const CardDetails = () => {
                 </div>
                 <div>
                     <form onSubmit={(e) => handleReview(e)}>
-                        <h3 className="text-white text-lg font-bold my-2">User Opinion</h3>
+                        <h3 className="text-white text-lg font-bold my-2">User Opinion / Review</h3>
                         <textarea className="textarea textarea-warning my-2 text-black h-44 w-60" name="textArea" placeholder=""></textarea>
                         <button className="w-60 bg-yellow-800 py-2 rounded-2xl text-sm font-bold text-gray-300">Submit</button>
                     </form>

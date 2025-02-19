@@ -10,16 +10,25 @@ import Loading from "../Page/Loading";
 const PropertyBought = () => {
     const { user } = useContext(AuthContext)
     const axiosSecure = UseAxios()
-    const { data: infos = [],refetch, isPending } = useQuery({
-        queryKey: ['infos', user],
+    const { data: offerInfo = [],refetch, isPending, isLoading } = useQuery({
+        queryKey: ['offerInfo', user],
         queryFn: async () => {
             const { data } = await axiosSecure.get(`/offered/${user?.email}`)
             return data
         }
     })
 
-    if (isPending) return <Loading></Loading>
-    console.log(infos)
+    
+    const { data: inf = [] } = useQuery({
+        queryKey: ['inf', user],
+        queryFn: async () => {
+            const { data } = await axiosSecure.get(`/mode/Change/${user.email}`)
+            return data
+        }
+    })
+ 
+  
+   
 
     const handleDelete = async (id) => {
         Swal.fire({
@@ -41,15 +50,15 @@ const PropertyBought = () => {
               refetch()
             }
           });
-    
     }
+    if (isLoading) return <Loading></Loading>
     return (
-        <div>
+        <div >
             <div className="overflow-x-auto ">
-                <table className="table">
+                <table className='table'>
 
                     <thead>
-                        <tr>
+                        <tr className="text-blue-500">
                             <th>Image</th>
                             <th>Agent Name</th>
                             <th>Title</th>
@@ -62,20 +71,20 @@ const PropertyBought = () => {
                     </thead>
                     <tbody>
 
-                        {Array.isArray(infos) &&
-                            infos.map(info =>
-                                <tr className="bg-base-200" key={info._id}>
-                                    <img className="w-16 rounded-lg m-1" src={info.Image} alt="" />
+                        {Array.isArray(offerInfo) &&
+                            offerInfo.map(info =>
+                                <tr className="" key={info._id}>
+                                    <img className="w-20 h-20 object-cover rounded-lg m-1" src={info.Image} alt="" />
                                     <th>{info.agentName}</th>
-                                    <td className="text-sm font-bold text-gray-600">{info.title}</td>
-                                    <td className="text-sm font-bold text-gray-600">{info.location}</td>
-                                    <td className="text-sm font-bold text-gray-600">{info.offeredPrice}$</td>
-                                    <td className="text-sm font-bold text-gray-600">{info.status}</td>
+                                    <td className="text-sm font-bold">{info.title}</td>
+                                    <td className="text-sm font-bold">{info.location}</td>
+                                    <td className="text-sm font-bold">{info.offeredPrice}$</td>
+                                    <td className="text-sm font-bold">{info.status}</td>
                                     <td>
                                         {
                                             info.status === 'accepted' &&
                                             <span>
-                                                <button className="sm:px-5 sm:py-2 px-1 py-1 text-white m-1 bg-blue-600 rounded-lg">
+                                                <button className={info.status === 'paid'?'hidden':'sm:px-5 sm:py-2 px-1 py-1 text-white m-1 bg-blue-600 rounded-lg'}>
                                                     <Link to={`/dashboard/propertyBought/${info._id}`} className="text-sm font-bold text-white">Pay</Link>
                                                 </button>
                                             </span>

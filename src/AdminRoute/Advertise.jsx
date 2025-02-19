@@ -18,7 +18,7 @@ const Advertise = () => {
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr>
+                        <tr className="text-blue-500">
                             <th>Property Image</th>
                             <th>Agent Name</th>
                             <th>Property Title</th>

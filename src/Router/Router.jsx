@@ -32,6 +32,9 @@ import Advertisement from "../Page/Advertisement";
 import Payment from "../Page/Payment";
 import ErrorPage from "../Page/ErrorPage";
 import UserRoute from "./UserRoute";
+import AllReview from "../Page/AllReview";
+import AllAdvertise from "../Page/AllAdvertise";
+import DashHome from "../Page/DashHome";
 
 export const router = createBrowserRouter([
     {
@@ -59,6 +62,14 @@ export const router = createBrowserRouter([
                 path: '/detail/:id',
                 element: <PrivateRoute><CardDetails></CardDetails></PrivateRoute>
             },
+            {
+                path: '/allReview',
+                element: <PrivateRoute><AllReview></AllReview></PrivateRoute>
+            },
+            {
+                path: '/allAdvertise',
+                element: <PrivateRoute><AllAdvertise></AllAdvertise></PrivateRoute>
+            },
            
         ]
     },
@@ -69,6 +80,10 @@ export const router = createBrowserRouter([
             {
                 path: 'userProfile',
                 element: <UserRoute><PrivateRoute><MyProfile></MyProfile></PrivateRoute></UserRoute> 
+            },
+            {
+                index: true,
+                element: <PrivateRoute><DashHome></DashHome></PrivateRoute> 
             },
             {
                 path: 'myReview',

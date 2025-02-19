@@ -68,7 +68,7 @@ const RequestedProperties = () => {
                 <table className="table">
 
                     <thead>
-                        <tr>
+                        <tr  className="text-blue-500">
 
                             <th>Bayer Name</th>
                             <th>Bayer Email</th>

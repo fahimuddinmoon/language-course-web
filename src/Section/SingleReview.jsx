@@ -8,7 +8,7 @@ const SingleReview = ({ data }) => {
                 <img className="w-9 h-9 sm:w-12 rounded-full sm:h-12 object-cover" src={reviewerImg} alt="" />
                 <div className="my-3">
                    <p className="sm:text-sm sm:font-bold">{reviewerName}</p>
-                   <p className="sm:text-lg sm:font-bold pr-9">{reviewerEmail}</p>
+                   <p className="sm:text-lg sm:font-bold lg:text-sm lg:font-semibold">{reviewerEmail}</p>
                 </div>
             </div>
             <div>

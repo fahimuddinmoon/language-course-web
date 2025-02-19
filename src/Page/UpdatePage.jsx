@@ -49,7 +49,7 @@ const UpdatePage = () => {
         }
     }
     return (
-        <div className=" w-full h-full px-4">
+        <div className=" w-full h-full px-4 text-black">
             <h2 className="text-center w-full text-2xl font-bold my-6">Update Equipment</h2>
             <div className="card bg-base-100 w-full  shrink-0 shadow-2xl">
                 <form onSubmit={handleSubmit} className="card-body">

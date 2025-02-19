@@ -11,8 +11,8 @@ const MyAddedProperties = () => {
     const axiosSecure = UseAxios()
     const [dataName] = UseRole()
     const { user } = useContext(AuthContext)
-    const { data: infos = [], isLoading,refetch } = useQuery({
-        queryKey: ['infos', user],
+    const { data: allAdd = [], isLoading,refetch } = useQuery({
+        queryKey: ['allAdd', user],
         queryFn: async () => {
             const { data } = await axiosSecure.get(`/pendingProperty/pen/${user?.email}`)
             return data
@@ -38,7 +38,7 @@ const MyAddedProperties = () => {
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr>
+                        <tr className="text-blue-500">
                             <th>Image</th>
                             <th>Name</th>
                             <th>Agent Img</th>
@@ -52,7 +52,7 @@ const MyAddedProperties = () => {
                     <tbody>
                         {/* row 1 */}
                         {
-                            infos.map(info =>
+                            allAdd.map(info =>
                                 <tr className="bg-base-200" key={info._id}>
                                     <img className="w-16 h-16 object-cover  rounded-lg m-1" src={info.Image} alt="" />
                                     <th className="text-sm font-bold text-gray-600">{info.bayerName}</th>

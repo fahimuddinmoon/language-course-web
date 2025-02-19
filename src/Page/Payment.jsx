@@ -16,14 +16,16 @@ const Payment = () => {
             return data
         }
     })
-    const{offeredPrice}=infos
+    console.log(infos)
+    const{offeredPrice,agentEmail,agentName,_id}=infos
+
     const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_API)
     return (
         <div>
             <h3>Payment</h3>
             <div>
                 <Elements stripe={stripePromise}>
-                    <CheckoutForm price={offeredPrice}></CheckoutForm>
+                    <CheckoutForm price={offeredPrice}  agentName={agentName} agentEmail={agentEmail} cartID={_id}></CheckoutForm>
                 </Elements>
             </div>
         </div>

@@ -13,7 +13,7 @@ import img5 from '../../public/image/pexels-rdne-8292791.jpg'
 
 const Banner = () => {
     return (
-        <div className='w-10/12 mx-auto'>
+        <div className='sm:px-10'>
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
@@ -29,16 +29,16 @@ const Banner = () => {
                 className="mySwiper"
             >
                 <SwiperSlide className=''>
-                    <img className=' h-[550px] lg:w-full mx-3  object-cover' src={img1} alt="" />
+                    <img className=' lg:h-[550px] lg:w-full    object-cover' src={img1} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img className=' h-[550px] lg:w-full mx-3  object-cover' src={img3} alt="" />
+                    <img className=' lg:h-[550px] sm:w-full   object-cover' src={img3} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img className=' h-[550px] lg:w-full mx-3  object-cover' src={img4} alt="" />
+                    <img className=' lg:h-[550px] sm:w-full   object-cover' src={img4} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img className=' h-[550px] lg:w-full mx-3  object-cover' src={img5} alt="" />
+                    <img className=' lg:h-[550px] sm:w-full   object-cover' src={img5} alt="" />
                 </SwiperSlide>
             </Swiper>
         </div>

@@ -57,7 +57,7 @@ const ManageProperties = () => {
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr>
+                        <tr className="text-blue-500">
                             <th>Name</th>
                             <th>Email</th>
                             <th>Title</th>

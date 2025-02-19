@@ -61,7 +61,7 @@ const Offer = () => {
 
     return (
         <div>
-            <div className="card bg-base-100 w-full  shrink-0 shadow-2xl">
+            <div className="card bg-base-100 w-full text-black shrink-0 shadow-2xl">
                 <form onSubmit={handleSubmit} className="card-body">
 
                     <div className="sm:flex justify-between gap-4">

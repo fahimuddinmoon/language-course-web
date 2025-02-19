@@ -9,6 +9,7 @@ export const AuthContext = createContext(null)
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
+    const [dark, setDark] = useState(false)
     const axiosSecure = UseAxios()
     const provider = new GoogleAuthProvider()
     const googleLogin = () => {
@@ -22,7 +23,7 @@ const AuthProvider = ({ children }) => {
     }
 
     const profileUpdate = (updateData) => {
-       return updateProfile(auth.currentUser, updateData)
+        return updateProfile(auth.currentUser, updateData)
     }
 
     const login = (email, password) => {
@@ -35,21 +36,28 @@ const AuthProvider = ({ children }) => {
         signOut(auth)
     }
 
-    useEffect( () => {
+    useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, async currentUser => {
             if (currentUser && currentUser.photoURL) {
                 await axiosSecure.post(`/users/${currentUser?.email}`,
-                {
-                    name: currentUser?.displayName,
-                    image: currentUser?.photoURL,
-                    email: currentUser?.email,
-                    role: 'user',
-                    report: 'well'
-                }
-             )
-             setUser(currentUser)
+                    {
+                        name: currentUser?.displayName,
+                        image: currentUser?.photoURL,
+                        email: currentUser?.email,
+                        role: 'user',
+                        report: 'well'
+                    }
+                )
+                await axiosSecure.post(`/mode/Change/${currentUser?.email}`,
+                    {
+                        email: currentUser?.email,
+                        mode: 'light'
+                    }
+                )
+
+                setUser(currentUser)
             } else {
-                
+
                 setUser(null)
             }
             setLoading(false)
@@ -67,7 +75,9 @@ const AuthProvider = ({ children }) => {
         createUser,
         profileUpdate,
         login,
-        logout
+        logout,
+        dark,
+        setDark
     }
 
     return (

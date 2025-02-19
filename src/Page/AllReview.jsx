@@ -1,22 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
 import UseAxios from "../Utility/UseAxios";
-import SingleReview from "./SingleReview";
+import SingleReview from "../Section/SingleReview";
 
 
-const ReviewSection = () => {
+
+const AllReview = () => {
     const axiosSecure = UseAxios()
-    const { data: allData = [], refetch } = useQuery({
-        queryKey: ['allData'],
+    const { data: allReviewData = [], refetch } = useQuery({
+        queryKey: ['allReviewData'],
         queryFn: async () => {
             const { data } = await axiosSecure.get('/reviews')
             return data
         }
     })
-
-    const sortData = allData.sort((first, second) => new Date(second.time) - new Date(first.time))
-
     return (
-        <div>
+        <div className="pt-16 lg:pt-24">
             <div className='py-5 mt-8 text-center'>
                 <h2 className='text-3xl font-bold my-2 mx-8 sm:mx-0'>
                     Your Trust Our Commitment
@@ -27,12 +25,11 @@ const ReviewSection = () => {
             </div>
             <div className="lg:grid lg:grid-cols-4 my-3  gap-9 m-10">
                 {
-                    sortData.slice(0, 4).map(data => <SingleReview key={data._id} data={data}></SingleReview>)
+                    allReviewData.map(data => <SingleReview key={data._id} data={data}></SingleReview>)
                 }
             </div>
-
         </div>
     );
 };
 
-export default ReviewSection;
+export default AllReview;

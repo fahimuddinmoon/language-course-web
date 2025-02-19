@@ -18,15 +18,15 @@ const AllPropertise = () => {
     if (isLoading) return <Loading></Loading>
     return (
         <div className="py-32">
-            <h2 className='text-3xl font-bold my-2 text-center'>
+            <h2 className='text-3xl font-bold my-2 text-center px-10'>
                 Buying a Home Made Easy
             </h2>
-            <p className='text-sm font-bold my-3 text-gray-400 text-center p-3'>
+            <p className='text-sm font-bold my-3 text-gray-400 text-center px-6 sm:px-10'>
                 Making the right choice for your new home is crucial. Our consultants will guide you in finding the perfect property.
             </p>
 
-            <div className="my-8 flex justify-between w-11/12 mx-auto">
-                 <button onClick={()=>setSort(true)} className="px-3 rounded-xl text-sm font-bold bg-blue-600">Sort By Price</button>
+            <div className="my-8 flex justify-between gap-2 px-10">
+                 <button onClick={()=>setSort(true)} className="px-3 rounded-xl text-sm font-bold text-white bg-blue-600">Sort By Price</button>
                 <label className="input input-bordered flex items-center gap-2 text-black">
                     <input type="text" onBlur={e => setSearch(e.target.value)} className="grow" placeholder="Search" />
                     <svg

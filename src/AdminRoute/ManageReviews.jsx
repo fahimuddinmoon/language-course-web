@@ -48,7 +48,7 @@ const ManageReviews = () => {
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr>
+                        <tr className="text-blue-500">
                             <th>ReviewerImage</th>
                             <th>ReviewerName</th>
                             <th>ReviewerEmail</th>

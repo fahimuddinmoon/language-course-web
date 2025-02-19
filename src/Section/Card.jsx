@@ -5,7 +5,7 @@ const Card = ({info}) => {
     
     const {Image,bayerEmail,bayerImg,bayerName,location,maxPrice,minPrice,status,title,_id} = info
     return (
-        <div className="card card-compact bg-yellow-700 shadow-xl border my-3">
+        <div className="card card-compact bg-yellow-700 text-white shadow-xl border my-3">
             <figure>
                 <img
                     className="w-56 h-56 object-cover p-3 rounded-3xl"
@@ -13,7 +13,7 @@ const Card = ({info}) => {
                     alt="" />
             </figure>
             <div className="card-body">
-                <div className="flex gap-6 justify-between">
+                <div className="flex gap-6 justify-between items-center">
                     <img className="w-12 h-12 rounded-full" src={bayerImg} referrerPolicy="no-referrer" alt="" />
                     <div>
                     <h2 className="text-sm font-semibold mb-2">Seller Name :- {bayerName} </h2>
