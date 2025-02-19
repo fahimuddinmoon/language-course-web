@@ -21,8 +21,8 @@ const Advertisement = () => {
     const handleAdvertise = async (e) => {
         e.preventDefault()
         const advertise = e.target.textArea.value
-        const adminEmail = user.email
-        const adminIMG = user.photoURL
+        const adminEmail = user?.email
+        const adminIMG = user?.photoURL
         
         const propertyTitle = infos.title
         const propertyLocation = infos.location

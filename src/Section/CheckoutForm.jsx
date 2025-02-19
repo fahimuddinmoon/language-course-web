@@ -80,7 +80,7 @@ const CheckoutForm = ({ price,agentName,agentEmail,cartID}) => {
           agentName,
           agentEmail,
           cartID,
-          bayerEmail:user.email,
+          bayerEmail:user?.email,
           PaymentPrice :price
         }
         try{

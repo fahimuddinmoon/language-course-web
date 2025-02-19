@@ -22,7 +22,7 @@ const PropertyBought = () => {
     const { data: inf = [] } = useQuery({
         queryKey: ['inf', user],
         queryFn: async () => {
-            const { data } = await axiosSecure.get(`/mode/Change/${user.email}`)
+            const { data } = await axiosSecure.get(`/mode/Change/${user?.email}`)
             return data
         }
     })

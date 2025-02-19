@@ -23,7 +23,7 @@ const Offer = () => {
     })
 
     const { Image, bayerEmail: agentEmail, bayerImg, bayerName, location, maxPrice, minPrice, status, title, _id } = info
-    console.log(bayerName, agentEmail)
+   
     const handleSubmit = async (e) => {
         e.preventDefault()
         const agentName = e.target.name.value

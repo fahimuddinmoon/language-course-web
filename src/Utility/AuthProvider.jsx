@@ -38,7 +38,7 @@ const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, async currentUser => {
-            if (currentUser && currentUser.photoURL) {
+            if (currentUser && currentUser?.photoURL) {
                 await axiosSecure.post(`/users/${currentUser?.email}`,
                     {
                         name: currentUser?.displayName,
