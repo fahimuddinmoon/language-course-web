@@ -1,7 +1,7 @@
 
 
 const MapAdvertise = ({ data }) => {
-    console.log(data)
+    
     const { propertyTitle, advertise,propertyLocation, adminEmail, reviewerName ,adminIMG} = data
     return (
         <div className="p-6 text-center items-center bg-gray-200 text-gray-700 rounded-xl my-4">

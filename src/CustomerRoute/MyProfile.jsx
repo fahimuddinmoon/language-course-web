@@ -4,7 +4,7 @@ import UseRole from "../Utility/UseRole";
 
 const MyProfile = () => {
     const [role] = UseRole()
-    console.log(role)
+    
     return (
         <div>
             <UseProfile></UseProfile>

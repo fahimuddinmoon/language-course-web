@@ -19,7 +19,7 @@ const RequestedProperties = () => {
         }
     })
     if (isPending) return <Loading></Loading>
-    console.log(dataAll)
+   
     const handleReject = async (id) => {
         try {
             Swal.fire({

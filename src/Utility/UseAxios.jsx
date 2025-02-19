@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:9000'
+    baseURL: 'https://final-project-server-coral.vercel.app'
 }) 
 const UseAxios = () => {
  return axiosSecure;

@@ -31,7 +31,7 @@ const Navbar = () => {
     }
 
     const handledark = async (id) => {
-   console.log(id)
+   
         try {
                 await axiosSecure.patch(`/mode/update/light/${id}`)
         } catch {

@@ -16,7 +16,7 @@ const Payment = () => {
             return data
         }
     })
-    console.log(infos)
+    
     const{offeredPrice,agentEmail,agentName,_id}=infos
 
     const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_API)

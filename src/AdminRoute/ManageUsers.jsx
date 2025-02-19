@@ -17,7 +17,7 @@ const ManageUsers = () => {
             return data
         }
     })
-    console.log(allData)
+   
 
     const handleChange = async (e, id, dataRole) => {
         e.preventDefault()

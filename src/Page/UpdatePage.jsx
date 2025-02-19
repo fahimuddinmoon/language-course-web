@@ -10,7 +10,7 @@ const UpdatePage = () => {
     const navigate = useNavigate()
     const { id } = useParams()
     const axiosSecure = UseAxios()
-    console.log(id)
+    
     const { data: info = [], refetch } = useQuery({
         queryKey: ['data', id],
         queryFn: async () => {
@@ -43,7 +43,7 @@ const UpdatePage = () => {
             });
             navigate('/dashboard/myAddProperties')
         } catch (error) {
-            console.log(error)
+            
         }finally{
             refetch()
         }

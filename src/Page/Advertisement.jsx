@@ -17,7 +17,7 @@ const Advertisement = () => {
             return data
         }
     })
-    console.log(infos)
+   
     const handleAdvertise = async (e) => {
         e.preventDefault()
         const advertise = e.target.textArea.value

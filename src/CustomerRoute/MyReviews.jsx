@@ -15,7 +15,7 @@ const MyReviews = () => {
             return data
         }
     })
-    console.log(info)
+   
     return (
         <div className="">
             <h2  className='text-3xl font-bold my-7 text-center'>My Reviews</h2>

@@ -20,7 +20,7 @@ const CheckoutForm = ({ price,agentName,agentEmail,cartID}) => {
     if (price > 0) {
       axiosSecure.post('/create-payment-intent', { price })
         .then(res => {
-          console.log(res.data.clientSecret);
+         
           setClientSecret(res.data.clientSecret);
         })
 
@@ -48,10 +48,10 @@ const CheckoutForm = ({ price,agentName,agentEmail,cartID}) => {
       card,
     });
     if (error) {
-      console.log(error)
+      
       setError(error.message)
     } else {
-      console.log(paymentMethod)
+      
       setError('')
     }
 
@@ -68,10 +68,10 @@ const CheckoutForm = ({ price,agentName,agentEmail,cartID}) => {
       }
     )
     if (confirmError) {
-      console.log('confirm Error')
+      ('confirm Error')
     }
     else {
-      console.log('paymentIntent', paymentIntent)
+      
       if (paymentIntent.status === 'succeeded'){
         setTransactionId(paymentIntent.id);
 

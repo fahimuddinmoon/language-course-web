@@ -13,7 +13,7 @@ const ManageProperties = () => {
             return data
         }
     })
-    console.log(properties)
+    
    
     
     const handleVerify = async (id) => {
