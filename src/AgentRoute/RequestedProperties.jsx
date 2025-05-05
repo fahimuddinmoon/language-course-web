@@ -85,11 +85,11 @@ const RequestedProperties = () => {
                         {Array.isArray(dataAll) &&
                             dataAll.map(info =>
                                 <tr className="" key={info._id}>
-                                    <th className="text-sm font-bold text-gray-600">{info.bayerName}</th>
-                                    <th className="text-sm font-bold text-gray-600">{info.bayerEmail}</th>
-                                    <td className="text-sm font-bold text-gray-600">{info.title}</td>
-                                    <td className="text-sm font-bold text-gray-600">{info.location}</td>
-                                    <td className="text-sm font-bold text-gray-600">{info.offeredPrice}$</td>
+                                    <th className="text-sm font-bold ">{info.bayerName}</th>
+                                    <th className="text-sm font-bold ">{info.bayerEmail}</th>
+                                    <td className="text-sm font-bold ">{info.title}</td>
+                                    <td className="text-sm font-bold ">{info.location}</td>
+                                    <td className="text-sm font-bold ">{info.offeredPrice}$</td>
                                     <td>
 
                                         {
