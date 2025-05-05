@@ -13,7 +13,7 @@ const ReviewSection = () => {
         }
     })
 
-    const sortData = allData.sort((first, second) => new Date(second.time) - new Date(first.time))
+    const sortData = allData.sort((first, second) => new Date(second.jobPostTime) - new Date(first.jobPostTime))
 
     return (
         <div>

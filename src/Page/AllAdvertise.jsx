@@ -11,6 +11,7 @@ const AllAdvertise = () => {
             const { data } = await axiosSecure.get('/advertise')
             return data
         }
+        
     })
     return (
         <div className="pt-20 lg:pt-24">

@@ -13,9 +13,8 @@ const ManageProperties = () => {
             return data
         }
     })
-    
    
-    
+
     const handleVerify = async (id) => {
 
         try {
@@ -28,8 +27,6 @@ const ManageProperties = () => {
                 icon: "success",
                 draggable: true
             });
-
-
         } catch (error) {
 
         }

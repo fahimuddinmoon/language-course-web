@@ -1,5 +1,4 @@
 import { NavLink, Outlet } from "react-router-dom";
-
 import UseRole from "../Utility/UseRole";
 import { useContext } from "react";
 import { AuthContext } from "../Utility/AuthProvider";
@@ -7,7 +6,7 @@ import UseAxios from "../Utility/UseAxios";
 import { useQuery } from "@tanstack/react-query";
 
 
-
+ 
 
 const Dashbord = () => {
     const [dataName] = UseRole()
@@ -23,7 +22,7 @@ const Dashbord = () => {
     
 
     return (
-        <div className={infos.mode === 'dark'?'bg-black text-white px-4 sm:px-10':'px-4 sm:px-10'}>
+        <div className={infos.mode === 'dark'?'bg-black text-white px-4 sm:px-10':'px-4 sm:px-10' || infos.mode === 'light'?'px-4 sm:px-10':''}>
 
             <div className="flex ">
 

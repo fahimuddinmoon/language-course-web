@@ -19,7 +19,7 @@ const MainLayout = () => {
         }
     })
     return (
-        <div className={infos.mode === 'dark'?'bg-black text-white ':''}>
+        <div className={infos.mode === 'dark'?'bg-black text-white ':'' || infos.mode === 'light'?'':''}>
             <div>
                 <Navbar></Navbar>
             </div>
