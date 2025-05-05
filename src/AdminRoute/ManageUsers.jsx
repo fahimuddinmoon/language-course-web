@@ -109,7 +109,7 @@ const ManageUsers = () => {
                             {/* row 1 */}
                             {
                                 allData.map(data =>
-                                    <tr className="bg-base-200 text-center justify-center items-center" key={data._id}>
+                                    <tr className=" text-center justify-center items-center" key={data._id}>
                                         <img className="w-16 h-16  object-cover rounded-full m-1" src={data.image} alt="" />
                                         <th className="text-sm font-bold text-gray-600">{data.name}</th>
                                         <td className="text-sm font-bold text-gray-600">{data.email}</td>
