@@ -67,7 +67,7 @@ const ManageProperties = () => {
                         {/* row 1 */}
                         {
                             properties.map(property =>
-                                <tr className="bg-base-200" key={property._id}>
+                                <tr className="" key={property._id}>
                                     <th className="text-sm font-bold text-gray-600">{property.bayerName}</th>
                                     <td className="text-sm font-bold text-gray-600">{property.bayerEmail}</td>
                                     <td className="text-sm font-bold text-gray-600">{property.title}</td>
