@@ -45,20 +45,20 @@ const AddProperty = () => {
     return (
         <div className=" w-full h-full px-4 text-black">
             <h2 className="text-center w-full text-2xl font-bold my-6">Add Equipment</h2>
-            <div className="card bg-base-100 w-full  shrink-0 shadow-2xl">
+            <div className="card w-full  shrink-0 shadow-2xl">
                 <form onSubmit={handleSubmit} className="card-body">
 
                     <div className="sm:flex justify-between gap-4">
                         <div className="form-control w-full">
                             <label className="label">
-                                <span className="label-text">Name</span>
+                                <span className="label-text text-gray-500 font-bold">Name</span>
                             </label>
                             <input type="text" placeholder="Name" Value={user?.displayName} name="name" className="input input-bordered" required />
                         </div>
 
                         <div className="form-control w-full">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="label-text text-gray-500 font-bold">Email</span>
                             </label>
                             <input type="email" placeholder="Email" Value={user?.email} name="email" className="input input-bordered" required />
                         </div>
@@ -67,14 +67,14 @@ const AddProperty = () => {
                     <div className="sm:flex justify-between gap-4">
                         <div className="form-control w-full">
                             <label className="label">
-                                <span className="label-text">Property title</span>
+                                <span className="label-text text-gray-500 font-bold">Property title</span>
                             </label>
                             <input type="text" placeholder="Property title" name="title" className="input input-bordered" required />
                         </div>
 
                         <div className="form-control w-full">
                             <label className="label">
-                                <span className="label-text">Property location</span>
+                                <span className="label-text text-gray-500 font-bold">Property location</span>
                             </label>
                             <input type="text" placeholder="Property location" name="location" className="input input-bordered" required />
                         </div>
@@ -83,7 +83,7 @@ const AddProperty = () => {
                     <div className="sm:flex justify-between gap-4">
                         <div className="form-control w-full">
                             <label className="label">
-                                <span className="label-text"> Minimum Price</span>
+                                <span className="label-text text-gray-500 font-bold"> Minimum Price</span>
                             </label>
                             <input type="number" placeholder="Minimum Price" name="minPrice" className="input input-bordered" required />
 
@@ -91,7 +91,7 @@ const AddProperty = () => {
 
                         <div className="form-control w-full">
                             <label className="label">
-                                <span className="label-text"> Maximum Price</span>
+                                <span className="label-text text-gray-500 font-bold"> Maximum Price</span>
                             </label>
                             <input type="number" placeholder="Maximum Price" name="maxPrice" className="input input-bordered" required />
 
@@ -100,7 +100,7 @@ const AddProperty = () => {
 
                     <div className="form-control w-full">
                         <label className="label">
-                            <span className="label-text">Image</span>
+                            <span className="label-text text-gray-500 font-bold">Image</span>
                         </label>
                         <input type="file" name="image" required />
                     </div>
