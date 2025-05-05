@@ -60,7 +60,7 @@ const ManageReviews = () => {
                         {/* row 1 */}
                         {
                             allData.map(data =>
-                                <tr className="bg-base-200" key={data._id}>
+                                <tr className="" key={data._id}>
                                     <img className="w-16 h-16 object-cover rounded-full m-1" src={data.reviewerImg} alt="" />
                                     <th className="text-sm font-bold text-gray-600">{data.reviewerName}</th>
                                     <td className="text-sm font-bold text-gray-600">{data.reviewerEmail}</td>
