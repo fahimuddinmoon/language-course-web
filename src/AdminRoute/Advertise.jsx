@@ -30,7 +30,7 @@ const Advertise = () => {
                         {/* row 1 */}
                         {Array.isArray(infos) &&
                             infos.map(data =>
-                                <tr className="bg-base-200" key={data._id}>
+                                <tr className="" key={data._id}>
                                     <img className="w-16 h-16 object-cover rounded-full m-1" src={data.Image} alt="" />
                                     <th className="text-sm font-bold text-gray-600">{data.bayerName}</th>
                                     <td className="text-sm font-bold text-gray-600">{data.title}</td>

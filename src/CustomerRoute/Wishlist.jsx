@@ -51,15 +51,15 @@ const Wishlist = () => {
                                 {/* row 1 */}
                                 {Array.isArray(allData) &&
                                     allData.map(data =>
-                                        <tr className="bg-base-200" key={data._id}>
+                                        <tr className="" key={data._id}>
                                             <img className="w-20 h-20 object-cover rounded-lg m-1" src={data.Image} alt="" />
-                                            <th className="text-sm font-bold text-gray-600">{data.bayerName}</th>
+                                            <th className="text-sm font-bold ">{data.bayerName}</th>
                                             <th><img className="w-11 object-cover h-11 rounded-full" src={data.bayerImg} alt="" /></th>
 
-                                            <td className="text-sm font-bold text-gray-600">{data.title}</td>
-                                            <td className="text-sm font-bold text-gray-600">{data.location}</td>
-                                            <td className="text-sm font-bold text-gray-600">{data.minPrice}$ - {data.maxPrice}$</td>
-                                            <td className="text-sm font-bold text-gray-600">{data.status}</td>
+                                            <td className="text-sm font-bold ">{data.title}</td>
+                                            <td className="text-sm font-bold ">{data.location}</td>
+                                            <td className="text-sm font-bold ">{data.minPrice}$ - {data.maxPrice}$</td>
+                                            <td className="text-sm font-bold ">{data.status}</td>
                                             <td>
                                                 <button className="text-white sm:font-bold bg-blue-700  px-1 py-1 sm:px-2  rounded-full">
                                                     <Link to={`/dashboard/offer/${data._id}`}>Make an offer</Link>
