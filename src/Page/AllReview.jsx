@@ -1,18 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
 import UseAxios from "../Utility/UseAxios";
 import SingleReview from "../Section/SingleReview";
+import Loading from "./Loading";
 
 
 
 const AllReview = () => {
     const axiosSecure = UseAxios()
-    const { data: allReviewData = [], refetch } = useQuery({
+    const { data: allReviewData = [], refetch,isLoading } = useQuery({
         queryKey: ['allReviewData'],
         queryFn: async () => {
             const { data } = await axiosSecure.get('/reviews')
             return data
         }
     })
+    if(isLoading) return <Loading></Loading>
     return (
         <div className="pt-16 lg:pt-24">
             <div className='py-5 mt-8 text-center'>

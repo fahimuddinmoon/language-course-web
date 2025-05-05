@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import UseAxios from "../Utility/UseAxios";
 import { Link } from "react-router-dom";
+import Loading from "../Page/Loading";
 
 
 const Advertise = () => {
@@ -12,6 +13,7 @@ const Advertise = () => {
             return data
         }
     })
+    if(isLoading) return <Loading></Loading>
     return (
         <div>
             <div className="overflow-x-auto ">
