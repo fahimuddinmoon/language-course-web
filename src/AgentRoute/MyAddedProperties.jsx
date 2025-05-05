@@ -53,7 +53,7 @@ const MyAddedProperties = () => {
                         {/* row 1 */}
                         {
                             allAdd.map(info =>
-                                <tr className="bg-base-200" key={info._id}>
+                                <tr className="" key={info._id}>
                                     <img className="w-16 h-16 object-cover  rounded-lg m-1" src={info.Image} alt="" />
                                     <th className="text-sm font-bold text-gray-600">{info.bayerName}</th>
                                     <th><img className="w-9 h-9 object-cover rounded-full" src={info.bayerImg} alt="" /></th>
