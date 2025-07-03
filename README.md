@@ -4,7 +4,7 @@ Repository Overview
 
 # 1. Project Overview: A full-stack real estate platform where users can buy and sell properties, post listings, and leave reviews. Admins approve property listings and can assign roles like Agent or Admin.
 
-# 2. Live Project Link: https://final-project-f38eb.firebaseapp.com/
+# 2. Live Project Link: https://fir-projects-23909.web.app/
 
 # 3. Technologies Used: React.js, Node.js, Express.js, Firebase, MongoDB, Tailwind CSS
 
